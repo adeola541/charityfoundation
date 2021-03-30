@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&family=Barlow+Condensed:wght@100&family=Dancing+Script:wght@600&display=swap');
+
+/* Basic styling */
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* custom scroll bar */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* all similar content styling codes */
+
+section {
+    padding: 100px 0;
+}
+
+.max-width {
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.about,
+.services,
+.skills,
+.teams,
+.contact,
+.motive,
+footer {
+    font-family: 'Poppins', sans-serif;
+}
+
+.about .about-content,
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content .motive .motive-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+section .title::before {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+
+section .title::after {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    font-size: 20px;
+    color: ;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+nav {
+    background: #DAA520;
+    padding: 0 10px;
+    border-style: outset;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+
+.logo{
+    padding: 10px 30px; 
+}
+
+.logo a {
+    font-size: 25px;
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 200;
+}
+
+.logomenu p {
+    float: right;
+    padding-top: 23px;
+}
+
+
+
+.logomenu .btn:hover {
+    letter-spacing: 6px;
+}
+
+.item {
+    padding: 10px;
+}
+
+.item.button {
+    padding: 9px 5px;
+}
+
+.item:not(.button) a:hover,
+.item a:hover::after {
+    color: rgb(28, 29, 28);
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    z-index: -1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("images/ZAF-20200725-008.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.home .home-content {
+    max-width: 900px;
+    text-align: center;
+}
+
+.home .home-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+}
+
+.home .home-content h2 {
+    font-size: 1.3rem;
+    color: #fff;
+    border: white solid 1px;
+    background-color: #DAA520;
+}
+
+.home .home-content p {
+    font-size: 1rem;
+    color: #111;
+}
+
+
+
+
+/* Mobile menu */
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 5px;
+}
+
+
+
+.toggle {
+    order: 1;
+    font-size: 20px;
+}
+
+.item.button {
+    order: 2;
+}
+
+.item {
+    order: 3;
+    width: 100%;
+    text-align: center;
+    display: none;
+}
+
+.active .item {
+    display: block;
+}
+
+
+
+
+
+
+/* Tablet menu */
+
+@media all and (min-width: 700px) {
+    .menu {
+        justify-content: center;
+    }
+    .logo {
+        flex: 1;
+    }
+    .item.button {
+        width: auto;
+        order: 1;
+        display: block;
+    }
+    .toggle {
+        flex: 1;
+        text-align: right;
+        order: 2;
+    }
+    /* Button up from tablet screen */
+    .menu li.button a {
+        padding: 10px 15px;
+        margin: 5px 0;
+    }
+    .button a {
+        background: #0080ff;
+        border: 1px royalblue solid;
+    }
+    .button.secondary {
+        border: 0;
+    }
+    .button.secondary a {
+        background: transparent;
+        border: 1px #0080ff solid;
+    }
+    .button a:hover {
+        text-decoration: none;
+    }
+    .button:not(.secondary) a:hover {
+        background: royalblue;
+        border-color: darkblue;
+    }
+}
+
+
+/* Desktop menu */
+
+@media all and (min-width: 960px) {
+    .menu {
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        background: none;
+    }
+    .logo {
+        order: 0;
+    }
+    .item {
+        order: 1;
+        position: relative;
+        display: block;
+        width: auto;
+    }
+    .button {
+        order: 2;
+    }
+   
+    .toggle {
+        display: ;
+    }
+   
+}
+
+
+/* .about{
+    font-family: 'Dancing Script', cursive;
+  } */
+
+.title-item {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+    border-style: outset;
+    color: #DAA520;
+}
+
+.text-1 {
+    font-size: 17px;
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+    color: black;
+}
+
+.text-2 {
+    font-size: 17px;
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+    color: black;
+}
+
+.text h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    color: #DAA520;
+}
+
+.text-3 p {
+    font-size: 5px;
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+    color: black;
+    ;
+}
+
+
+/* Motive section styling */
+
+.motive .motive-content p {
+    font-size: 20px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+    background-image: none;
+    color: #DAA520;
+}
+
+.carousel-indicators li {
+    border-color:#DAA520;
+}
+
+.carousel-indicators li.active {
+    background-color: #DAA520;
+}
+
+/* contact section styling */
+
+.contact .title::after {
+    content: "get in touch";
+}
+
+.contact .contact-content .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.contact .contact-content .left p {
+    text-align: justify;
+}
+
+.contact .contact-content .left .icons {
+    margin: 10px 0;
+}
+
+.contact .contact-content .row {
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+
+.contact .contact-content .row .info {
+    margin-left: 30px;
+}
+
+.contact .contact-content .row i {
+    font-size: 25px;
+    color: #DAA520;
+}
+
+.contact .contact-content .info .head {
+    font-weight: 500;
+}
+
+.contact .contact-content .info .sub-title {
+    color: #333;
+}
+
+.contact .right form .fields {
+    display: flex;
+}
+
+.contact .right form .field,
+.contact .right form .fields .field {
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.contact .right form .textarea {
+    height: 80px;
+    width: 100%;
+}
+
+.contact .right form .name {
+    margin-right: 10px;
+}
+
+.contact .right form .email {
+    margin-left: 10px;
+}
+
+.contact .right form . Address {
+    margin-left: 10px;
+}
+
+.contact .right form .phone {
+    margin-left: 10px;
+}
+
+.contact .right form .field input,
+.contact .right form .textarea textarea {
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus {
+    border-color: #b3b3b3;
+}
+
+.contact .right form .textarea textarea {
+    padding-top: 10px;
+    resize: none;
+}
+
+.contact .right form .button {
+    height: 47px;
+    width: 170px;
+}
+
+.contact .right form .button button {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #DAA520;
+    background: #DAA520;
+    color: #fff;
+    outline: none;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.contact .right form .button button:hover {
+    color: #DAA520;
+    background: none;
+}
+
+
+/* footer section styling */
+
+footer {
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+}
+
+footer span a {
+    color:#DAA520 ;
+    text-decoration: none;
+}
+
+.Charity-items h1 {
+    color: #DAA520;
+}
+
+footer span a:hover {
+    text-decoration: underline;
+}
+.container-fluid {
+    padding: 60px 50px;
+}
+
+.bg-grey {
+    background-color: #f6f6f6;
+}
+
+@media screen and (max-width: 768px) {
+    .col-sm-4 {
+        text-align: center;
+        margin: 25px 0;
+    }
+}
+.con-form{
+    margin: 0;
+    text-align: center;
+    }
+    h1{
+        margin: 0;
+    }
+    p{
+        font-size: 14px;
+    }
+    .mytext{
+        font-size: 16px;
+        color: #000;
+    }
+    form{
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px 0px 0px 0px;
+    }
+    #DON-ITEMS{
+        font-size: 15px;
+        background-color: #000;
+        color: #f1f1f1;
+    }
+    input{
+        width: 200px;
+        display: block;
+        margin: 20px auto;
+        box-shadow: 0 0 10px #000;
+        border: 1px solid #f2f2f2;
+        background-color: #f2f2f2;
+        padding: 4px;
+    }
+    ::placeholder{
+        text-transform: uppercase;
+        font-size: 8px;
+        font-weight: bold;
+    }
+    textarea{
+        width: 200px;
+        height: 100px;
+        display: block;
+        margin: 20px auto;
+        box-shadow: 0 0 10px #000;
+        border: 1px solid #f2f2f2;
+        background-color: #f2f2f2;
+        padding: 4px;
+    }
+    button{
+        width: 120px;
+        height: 40px;
+        background-color: #000000;
+        color: #fff;
+    } */
